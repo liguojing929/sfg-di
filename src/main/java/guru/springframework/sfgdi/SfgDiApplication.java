@@ -5,6 +5,7 @@ import guru.springframework.sfgdi.Controllers.FactoryMode.FactoryConstructorInje
 import guru.springframework.sfgdi.Controllers.FactoryMode.FactoryController;
 import guru.springframework.sfgdi.Controllers.FactoryMode.FactoryPropertyInjectedController;
 import guru.springframework.sfgdi.Controllers.FactoryMode.FactorySetterInjectedController;
+import guru.springframework.sfgdi.examplebeans.SampleDataSource;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
@@ -17,6 +18,12 @@ public class SfgDiApplication {
 	public static void main(String[] args) {
 		ApplicationContext ctx = SpringApplication.run(SfgDiApplication.class, args);
 		// naming convention: using getBean to get the controller class you must specify the class name with lowercase starter.
+		System.out.println("---------Sample Data Source starts----------------");
+		SampleDataSource sampleDataSource = (SampleDataSource) ctx.getBean(SampleDataSource.class);
+		System.out.println(sampleDataSource.getUsername());
+		System.out.println("---------Sample Data Source ends ----------------");
+
+
 		System.out.println("---------Factory Mode Starts---------------");
 		FactoryController factoryController = (FactoryController)ctx.getBean(FactoryController.class);
 		System.out.println(factoryController.hello());
