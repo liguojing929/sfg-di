@@ -6,8 +6,18 @@ public class SampleDataSource {
     private String password;
     private String dbURL;
 
+    private String customizeName;
+
     public String getUsername() {
         return username;
+    }
+
+    public String getCustomizeName() {
+        return customizeName;
+    }
+
+    public void setCustomizeName(String customizeName) {
+        this.customizeName = customizeName;
     }
 
     public void setUsername(String username) {
