@@ -1,0 +1,8 @@
+# Spring boot will parse both application.properties and application.yml
+# and bring both of them into the context for us to use.
+## as shown below, we bring the guru.jms. properties from application.properties file into yaml file.
+guru:
+  jms:
+    username: JMS Username
+    password: somepass
+    url: SomeURL
