@@ -1,0 +1,14 @@
+### @Bean:
+```
+In short, a Spring bean is an object which Spring framework manages
+at runtime. A Spring bean is a basic building block of any Spring application.
+Most of the Application logic code you write will be placed in Spring beans.
+
+The management of a Spring bean includes:
+* creating an object
+* providing dependencies (e.g. other beans, configuration properties)
+* intercepting object method calls to provide additional framework features
+* destroying an object
+
+```
+
