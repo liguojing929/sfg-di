@@ -22,6 +22,7 @@ public class SfgDiApplication {
 		System.out.println("---------Sample Data Source starts----------------");
 		SampleDataSource sampleDataSource = (SampleDataSource) ctx.getBean(SampleDataSource.class);
 		System.out.println(sampleDataSource.getUsername());
+		System.out.println("This is to see if we can implement customized value in properties file: \n" + sampleDataSource.getCustomizeName());
 		System.out.println("---------Sample Data Source ends ----------------");
 
 		System.out.println("---------Sample JMS Broker starts-----------------");

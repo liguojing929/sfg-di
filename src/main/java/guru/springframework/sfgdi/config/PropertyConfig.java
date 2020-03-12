@@ -20,10 +20,7 @@ import org.springframework.core.env.Environment;
         @PropertySource("classpath:jms.properties")
     })
 */
-@PropertySources({
-        @PropertySource("classpath:datasource.properties"),
-        @PropertySource("classpath:jms.properties")
-})
+
 public class PropertyConfig {
 //    @Autowired
 //    Environment evn;
@@ -40,12 +37,17 @@ public class PropertyConfig {
     @Value("${guru.jms.url}")
     String jmsURL;
 
+    @Value("${customizeName}")
+    String customizedName;
+
     @Bean
     public SampleDataSource sampleDataSource() {
         SampleDataSource sampleDataSource = new SampleDataSource();
         //sampleDataSource.setUsername(evn.getProperty("USERNAME"));
+        sampleDataSource.setUsername(user);
         sampleDataSource.setPassword(password);
         sampleDataSource.setDbURL(url);
+        sampleDataSource.setCustomizeName(customizedName);
         return sampleDataSource;
     }
 
@@ -58,10 +60,10 @@ public class PropertyConfig {
         return sampleJmsBroker;
     }
 
-    @Bean // the "PropertySourcePlaceHolderConfigurer" will scan and read the properties file for us
-    public static PropertySourcesPlaceholderConfigurer properties() {
-        PropertySourcesPlaceholderConfigurer propertySourcesPlaceholderConfigurer =
-                new PropertySourcesPlaceholderConfigurer();
-        return propertySourcesPlaceholderConfigurer;
-    }
+//    @Bean // the "PropertySourcePlaceHolderConfigurer" will scan and read the properties file for us
+//    public static PropertySourcesPlaceholderConfigurer properties() {
+//        PropertySourcesPlaceholderConfigurer propertySourcesPlaceholderConfigurer =
+//                new PropertySourcesPlaceholderConfigurer();
+//        return propertySourcesPlaceholderConfigurer;
+//    }
 }
