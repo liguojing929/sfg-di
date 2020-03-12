@@ -1,0 +1,34 @@
+# this is comment
+
+name: Daniel
+
+names: # inLine comment
+  - Daniel
+  - Paul
+  - George
+
+pound_sign: "#"
+
+book:
+  author: Joe Buck
+  publisher: Random House
+
+truth: yes # this is boolean value
+another_truth: True
+more_truth: true
+false: no #No, false, False
+
+string_val: "This is it's quote"
+colon_string: "my book is: Harry Potter"
+
+include_new_lines: | # this indicate as a line separator and read through everything
+  line1 - hello1
+  line2 - hello2
+  line3 - hello3
+
+ignore_new_line: > # this indicates to ignore the line separator and make everything in a long string.
+  this is
+  just one long
+  string
+
+
