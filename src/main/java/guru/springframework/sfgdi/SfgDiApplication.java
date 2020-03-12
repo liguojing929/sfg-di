@@ -6,6 +6,7 @@ import guru.springframework.sfgdi.Controllers.FactoryMode.FactoryController;
 import guru.springframework.sfgdi.Controllers.FactoryMode.FactoryPropertyInjectedController;
 import guru.springframework.sfgdi.Controllers.FactoryMode.FactorySetterInjectedController;
 import guru.springframework.sfgdi.examplebeans.SampleDataSource;
+import guru.springframework.sfgdi.examplebeans.SampleJmsBroker;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
@@ -22,6 +23,11 @@ public class SfgDiApplication {
 		SampleDataSource sampleDataSource = (SampleDataSource) ctx.getBean(SampleDataSource.class);
 		System.out.println(sampleDataSource.getUsername());
 		System.out.println("---------Sample Data Source ends ----------------");
+
+		System.out.println("---------Sample JMS Broker starts-----------------");
+		SampleJmsBroker sampleJmsBroker = (SampleJmsBroker) ctx.getBean(SampleJmsBroker.class);
+		System.out.println(sampleJmsBroker.getUsername());
+		System.out.println("---------Sample JMS Broker ends-------------------");
 
 
 		System.out.println("---------Factory Mode Starts---------------");
